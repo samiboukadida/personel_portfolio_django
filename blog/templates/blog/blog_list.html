@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+    {% for blog in blog_list  %}
+    <div class="card mb-4 shadow">
+        <div class="card-body">
+            <h2 class="card-title">{{ blog.title }}</h2>
+            <p class="card-text text-muted h6">{{ blog.author }} | {{ blog.created_on}} </p>
+            <p class="card-text">{{blog.content|safe|truncatechars_html:"150" }}</p>
+            <div class="d-flex justify-content-between">
+               <a href="{% url 'blog:blog_detail' blog.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                {% if blog.author == user %}
+               <a href="{% url 'blog:blog_update' blog.slug  %}" class="btn btn-primary">Edit &rarr;</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+{%endblock%}

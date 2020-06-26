@@ -1,0 +1,52 @@
+[
+  {
+    "model": "portfolio.project",
+    "pk": 1,
+    "fields": {
+      "title": "My first project",
+      "description": "This is the description",
+      "image": "portfolio/images/pexels-photo-55787.jpeg",
+      "url": ""
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 2,
+    "fields": {
+      "title": "My second project",
+      "description": "This is the description of my second project",
+      "image": "portfolio/images/2560x1440.jpg",
+      "url": ""
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 3,
+    "fields": {
+      "title": "3rd Project",
+      "description": "Description of the third project",
+      "image": "portfolio/images/Cv12tTQUEAEniO2.jpg",
+      "url": ""
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+      "title": "4th Project",
+      "description": "Description of the fourth project",
+      "image": "portfolio/images/Hawaii-Beach-Wallpaper-HD.jpg",
+      "url": ""
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 5,
+    "fields": {
+      "title": "5th Project",
+      "description": "Description of the fifth project",
+      "image": "portfolio/images/img20.jpg",
+      "url": ""
+    }
+  }
+]
