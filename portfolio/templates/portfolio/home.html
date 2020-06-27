@@ -1,34 +1,29 @@
 {% extends 'portfolio/base.html' %}
 {% block content %}
-
-
 <div class="card">
     <div class="card-header">Projects ({{projects.count}})</div>
     <div class="card-body">
-
-            {% for  project in projects %}
-
-            <div class="card d-inline-block" style="width: 49%">
-              <img src="{{project.image.url}}" class="card-img-top" alt="..." >
-              <div class="card-body">
-                <h5 class="card-title">{{project.title}}</h5>
-                <p class="card-text">{{project.description | truncatechars:30}}</p>
-                  {% if project.url %}
-                <a href="{{project.url}}" class="btn btn-primary" >Go somewhere</a>
-                  {% endif %}
-              </div>
-            </div>
-
-            {% comment %}{% cycle 0 1 as mod %}
-                {% if mod == 1 %}
-                    <br>
-                    {% resetcycle mod %}
-                {% endif %}{% endcomment %}
+            {% load humanize %}
+            {% for  project in project_list %}
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-12">
+                      <img src="{{project.image.url}}" class="img-responsive shadow float-left mr-3 mb-3" alt="..." style="width: 260px;">
+                        <div>
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <span class="badge-info">{{ project.author.first_name }} {{ project.author.last_name }} | {{ project.created_on|naturaltime}}</span>
+                        </div>
+                      <p class="text-justify">{{project.description}}</p>
+                        {% if project.url %}
+                        <a href="{{project.url}}" class="btn btn-primary" >Go somewhere</a>
+                        {% endif %}
+                    </div>
+                  </div>
+                </div>
             {% empty %}
                 <h3>No projects yet</h3>
             {% endfor %}
-
+            {% block pagination %} {% include 'portfolio/pagination.html' %} {% endblock pagination %}
     </div>
 </div>
-
 {% endblock %}

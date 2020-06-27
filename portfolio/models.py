@@ -1,8 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
 
 class Project(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='portfolio/images/')

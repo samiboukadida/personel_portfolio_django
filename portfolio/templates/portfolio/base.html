@@ -53,7 +53,7 @@
             <div class="card shadow">
                 <div class="card-header">
                     {% now "DATETIME_FORMAT" %}
-                    <h1>{{ request.path }} </h1>
+                   {% comment %} <h1>{{ request.path }} </h1>{% endcomment %}
                 </div>
                 <div class="card-body">
                     <img src="{% static 'portfolio/images/my_photo.jpg' %}" class="img-fluid img-thumbnail" alt="...">
