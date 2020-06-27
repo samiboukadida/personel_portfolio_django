@@ -5,5 +5,7 @@ draft.txt
 *.pyc
 __pycache__/
 local_settings.py
+/static/
+
 
 
